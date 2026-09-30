@@ -76,7 +76,8 @@ const HOME = "about:home";
 const $ = (id) => document.getElementById(id);
 const tabsEl = $("tabs"), framesEl = $("frames"), addr = $("addr");
 
-let PROXY = (localStorage.getItem("mb_proxy") || "").replace(/\/+$/, "");
+const DEFAULT_PROXY = "https://mini-browser-proxy.3159mmg.workers.dev";
+let PROXY = (localStorage.getItem("mb_proxy") || DEFAULT_PROXY).replace(/\/+$/, "");
 let tabs = [], activeId = null, uid = 0;
 
 // Called by links on the built-in home page (same-origin via srcdoc).
